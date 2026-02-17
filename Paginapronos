@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo Dashboard - La Plata</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; text-align: center; padding: 20px; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #444;
+            transition: 0.3s;
+            text-decoration: none;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        .card:hover { background: #444; border-color: #00d4ff; }
+        h1 { color: #00d4ff; }
+        .btn-all {
+            background: #e63946; color: white; border: none; padding: 15px 30px;
+            font-size: 18px; border-radius: 5px; cursor: pointer; margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Monitoreo Meteorológico La Plata</h1>
+    <p>Haz clic para abrir cada fuente o usa el botón principal para abrir todas.</p>
+
+    <button class="btn-all" onclick="abrirTodo()">🚀 Abrir Todo el Panel</button>
+
+    <div class="grid-container">
+        <a class="card" href="https://www.windy.com/multimodel/-34.931/-57.942?-35.530,-57.942,8,i:pressure" target="_blank">
+            Windy (Multimodel LP)
+        </a>
+        <a class="card" href="https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=southamer&variable=mslp_jet" target="_blank">
+            Alicia Bentley (GFS Jet)
+        </a>
+        <a class="card" href="https://www.climasurgba.com.ar/radar/ezeiza" target="_blank">
+            Radar Ezeiza (ClimaSurGBA)
+        </a>
+        <a class="card" href="https://meteo.fcaglp.unlp.edu.ar" target="_blank">
+            Estación FCAGLP (UNLP)
+        </a>
+    </div>
+
+    <script>
+        function abrirTodo() {
+            window.open("https://www.windy.com/multimodel/-34.931/-57.942?-35.530,-57.942,8,i:pressure", "_blank");
+            window.open("https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=southamer&variable=mslp_jet", "_blank");
+            window.open("https://www.climasurgba.com.ar/radar/ezeiza", "_blank");
+            window.open("https://meteo.fcaglp.unlp.edu.ar", "_blank");
+        }
+    </script>
+
+</body>
+</html>
